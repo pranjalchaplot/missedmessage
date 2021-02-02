@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300&display=swap');
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background: rgb(252, 70, 110);
+  background: linear-gradient(
+    310deg,
+    rgba(252, 70, 110, 1) 0%,
+    rgba(159, 228, 111, 1) 90%
+  );
+}
+
+.joinInnerContainer {
+  width: 20%;
+}
+
+.joinInput {
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+  border-color: transparent;
+}
+
+.joinInput:focus {
+  border: 1px solid #1670be;
+  box-shadow: 0 0 3px #1670be;
+  outline-offset: 0px;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: 'Raleway', sans-serif;
+}
+
+.heading {
+  color: white;
+  text-shadow: 0 2px 3px rgba(0, 00, 00, 0.5);
+  font-size: 3.5em;
+  font-family: 'Bebas Neue', cursive;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+  /* letter-spacing: 10px; */
+}
+
+.button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgb(252, 70, 110);
+  background: linear-gradient(
+    310deg,
+    rgba(252, 70, 110, 1) 0%,
+    rgba(111, 166, 228, 1) 90%
+  );
+  padding: 20px;
+  border-radius: 15px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  transition: ease-in-out;
+  transition-duration: 1.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgb(70, 181, 252);
+  background: linear-gradient(
+    310deg,
+    rgba(70, 181, 252, 1) 42%,
+    rgba(111, 166, 228, 1) 90%
+  );
+}
+
+.button:active,
+.button:focus {
+  border: 1px solid #1670be;
+  box-shadow: 0 0 3px #1670be;
+  border-radius: 15px;
+  outline-offset: 0px;
+  outline: none;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .joinOuterContainer {
+    height: 100%;
+  }
+
+  .joinInnerContainer {
+    width: 90%;
+  }
+}
+
+button:focus {
+  outline: 0;
+}
