@@ -8,7 +8,11 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {
+    cors: {
+        origin: '*',
+    }
+});
 
 io.on('connection', (socket) => {
     console.log('We have a new connection');
@@ -16,7 +20,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('User left!!');
     });
-})
+}, [])
 
 app.use(router);
 
