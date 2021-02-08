@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+.form {
+  display: flex;
+  border-top: 2px solid #d3d3d3;
+}
+
+.input {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 80%;
+  font-size: 1.2em;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: larger;
+  background: rgb(117, 130, 201);
+  background: linear-gradient(
+    10deg,
+    rgba(117, 130, 201, 1) 6%,
+    rgba(0, 120, 255, 1) 90%
+  );
+  padding: 20px;
+  display: inline-block;
+  border: none;
+  width: 20%;
+}
+
+.sendButton:after {
+  content: '';
+  background: #90ee90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.sendButton:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
