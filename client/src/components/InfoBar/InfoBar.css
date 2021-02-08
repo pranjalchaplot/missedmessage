@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+
 .infoBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #2979ff;
+  background: rgb(116, 119, 172);
+  background: linear-gradient(
+    19deg,
+    rgba(116, 119, 172, 1) 67%,
+    rgba(133, 176, 118, 1) 100%
+  );
   border-radius: 4px 4px 0 0;
   height: 60px;
   width: 100%;
@@ -25,4 +32,8 @@
 
 .onlineIcon {
   margin-right: 5%;
+}
+
+h3.roomNameText {
+  font-family: 'Lexend Mega', sans-serif;
 }
