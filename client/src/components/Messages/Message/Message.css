@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.messageBox {
+  background: #f3f3f3;
+  border-radius: 20px;
+  margin: 5px 0;
+  padding: 5px 20px;
+  color: white;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.messageText {
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 0;
+  float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.messageText img {
+  vertical-align: middle;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+  margin-top: 3px;
+}
+
+.sentText {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+  color: #828282;
+  letter-spacing: 0.3px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.colorDark {
+  color: #353535;
+}
+
+.backgroundBlue {
+  background: rgb(105, 122, 213);
+  background: linear-gradient(
+    10deg,
+    rgba(105, 122, 213, 1) 84%,
+    rgba(126, 127, 184, 1) 90%
+  );
+}
+
+.backgroundLight {
+  background: rgb(228, 193, 220);
+  background: linear-gradient(
+    175deg,
+    rgba(228, 193, 220, 1) 73%,
+    rgba(228, 193, 220, 1) 100%
+  );
+}
