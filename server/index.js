@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 
         socket.join(user.room);
 
-        io.to(user.room).emit('roomData', {room: user.room, users: getUserInRoom(user.room)})
+        io.to(user.room).emit('roomData', {room: user.room, users: getUserInRoom(user.room)});
 
         callback();
     });
@@ -41,6 +41,7 @@ io.on('connection', (socket) => {
         const user = getUser(socket.id);
 
         io.to(user.room).emit('message', { user: user.name, text: message });
+        io.to(user.room).emit('roomData', { room: user.room, users: getUserInRoom(user.room) });
 
         callback();
     })
