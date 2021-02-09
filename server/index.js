@@ -3,7 +3,7 @@ const express = require('express');
 const socketio = require('socket.io');
 const cors = require('cors');
 
-const { addUser, getUser, removeUser, getUserInRoom} = require( './users.js');
+const { addUser, getUser, removeUser, getUsersInRoom} = require( './users.js');
 
 const PORT = process.env.PORT || 5000;
 
@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 
         socket.join(user.room);
 
-        io.to(user.room).emit('roomData', {room: user.room, users: getUserInRoom(user.room)});
+        io.to(user.room).emit('roomData', {room: user.room, users: getUsersInRoom(user.room)});
 
         callback();
     });
@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
         const user = getUser(socket.id);
 
         io.to(user.room).emit('message', { user: user.name, text: message });
-        io.to(user.room).emit('roomData', { room: user.room, users: getUserInRoom(user.room) });
+        io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
 
         callback();
     })
@@ -49,9 +49,10 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         const user = removeUser(socket.id);
 
-        if(user){
-            io.to(user.room).emit('message', { user: 'admin', text: `${user.name} has left.`});
-        }
+        if(user) {
+            io.to(user.room).emit('message', { user: 'Admin', text: `${user.name} has left.` });
+            io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)});
+          }
     });
 },)
 
